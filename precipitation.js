@@ -44,7 +44,7 @@ stream.on("data", function(data)
   			flood.push(year);
   		}
 
-  	else if(r.size && (r.size >= minDataSize)&&(precipitation_value > (r.mean + multiplier*r.stdev)))
+  	else if(r.size && (r.size >= minDataSize)&&(precipitation_value < (r.mean - multiplier*r.stdev)))
   		{
   			console.log(`Oultlier detetcted.The year ${year} has unusally lower precipitation.So there may have many drought.`);
   			drought.push(year);	
